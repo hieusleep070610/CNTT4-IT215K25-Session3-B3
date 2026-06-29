@@ -13,7 +13,7 @@ books = [
         "id": 2,
         "title": "Web API Design",
         "author": "Phạm Lan Hồng",
-        "category": "web",
+        "category": "programming",
         "year": 2021,
         "is_available": False
     },
@@ -48,7 +48,7 @@ def display():
     for book in books:
         if book["category"]:
             categories.append(book["category"])
-    return {"categories": categories}
+    return {"categories": list(set(categories))}
 
 @app.get("/books/latest")
 def latest_Book():
